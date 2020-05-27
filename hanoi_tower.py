@@ -1,12 +1,12 @@
 import sys
-
+    
 def game(n, frm, aux, to):
     if n > 0:
         game(n-1, frm, to, aux)
 
         if frm[0]:
             disk = frm[0].pop()
-            print ('Movendo disco {0} da torre {1} para torre {2}'.format(disk, frm[1], to[1]))
+            print ('{0}>{1}>{2};'.format(disk, frm[1], to[1]))
             to[0].append(disk)
             moves.append(disk)
             
@@ -16,7 +16,7 @@ def sanity_check():
     n = 2 ** len(to[0]) - 1
     
     if n == len(moves):
-        print('A quantidade ideal de movimentos foi realizada - {} '.format(str(n)))
+        print('{}'.format(str(n)))
 
 if __name__ == '__main__': 
     
